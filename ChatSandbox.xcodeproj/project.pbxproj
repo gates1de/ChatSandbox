@@ -14,6 +14,11 @@
 		BF346BDE21C388A000F9CB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF346BDD21C388A000F9CB65 /* Assets.xcassets */; };
 		BF346BE121C388A000F9CB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF346BDF21C388A000F9CB65 /* LaunchScreen.storyboard */; };
 		BF346BEA21C393B500F9CB65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF346BE921C393B500F9CB65 /* GoogleService-Info.plist */; };
+		BF346BF621C3DEA100F9CB65 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BF321C3DEA000F9CB65 /* Date.swift */; };
+		BF346BF721C3DEA100F9CB65 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BF421C3DEA000F9CB65 /* FirestoreManager.swift */; };
+		BF346BF821C3DEA100F9CB65 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BF521C3DEA100F9CB65 /* ChatMessage.swift */; };
+		BF346BFD21C3EAD800F9CB65 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BFC21C3EAD800F9CB65 /* Room.swift */; };
+		BF346BFF21C3EEC600F9CB65 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BFE21C3EEC600F9CB65 /* ModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		BF346BE221C388A000F9CB65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF346BE821C388FE00F9CB65 /* ChatSandbox.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ChatSandbox.xcconfig; sourceTree = "<group>"; };
 		BF346BE921C393B500F9CB65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF346BF321C3DEA000F9CB65 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		BF346BF421C3DEA000F9CB65 /* FirestoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		BF346BF521C3DEA100F9CB65 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		BF346BFC21C3EAD800F9CB65 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		BF346BFE21C3EEC600F9CB65 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
 		D3815ACFA231B769A34C682F /* Pods-ChatSandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSandbox.debug.xcconfig"; path = "Target Support Files/Pods-ChatSandbox/Pods-ChatSandbox.debug.xcconfig"; sourceTree = "<group>"; };
 		D9314749FD7BCC41842D99E8 /* Pods-ChatSandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSandbox.release.xcconfig"; path = "Target Support Files/Pods-ChatSandbox/Pods-ChatSandbox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +82,9 @@
 		BF346BD521C3889D00F9CB65 /* ChatSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				BF346BFA21C3EAA900F9CB65 /* Extensions */,
+				BF346BF921C3EA8B00F9CB65 /* Models */,
+				BF346BFB21C3EAB900F9CB65 /* Utils */,
 				BF346BD621C3889D00F9CB65 /* AppDelegate.swift */,
 				BF346BD821C3889D00F9CB65 /* ViewController.swift */,
 				BF346BDA21C3889D00F9CB65 /* Main.storyboard */,
@@ -82,6 +95,32 @@
 				BF346BE921C393B500F9CB65 /* GoogleService-Info.plist */,
 			);
 			path = ChatSandbox;
+			sourceTree = "<group>";
+		};
+		BF346BF921C3EA8B00F9CB65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF346BF521C3DEA100F9CB65 /* ChatMessage.swift */,
+				BF346BFE21C3EEC600F9CB65 /* ModelProtocol.swift */,
+				BF346BFC21C3EAD800F9CB65 /* Room.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BF346BFA21C3EAA900F9CB65 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF346BF321C3DEA000F9CB65 /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF346BFB21C3EAB900F9CB65 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF346BF421C3DEA000F9CB65 /* FirestoreManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		D191EF02703EAD949EA0869F /* Pods */ = {
@@ -252,7 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF346BD921C3889D00F9CB65 /* ViewController.swift in Sources */,
+				BF346BF621C3DEA100F9CB65 /* Date.swift in Sources */,
+				BF346BFD21C3EAD800F9CB65 /* Room.swift in Sources */,
 				BF346BD721C3889D00F9CB65 /* AppDelegate.swift in Sources */,
+				BF346BF821C3DEA100F9CB65 /* ChatMessage.swift in Sources */,
+				BF346BFF21C3EEC600F9CB65 /* ModelProtocol.swift in Sources */,
+				BF346BF721C3DEA100F9CB65 /* FirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
