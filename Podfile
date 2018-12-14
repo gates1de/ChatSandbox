@@ -6,6 +6,7 @@ target 'ChatSandbox' do
   use_frameworks!
 
   # Pods for ChatSandbox
+  pod 'CodableFirebase'
   pod 'Firebase/Core', '5.13.0'
   pod 'Firebase/Firestore', '5.13.0'
 
