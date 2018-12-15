@@ -2,8 +2,6 @@
 //  Date.swift
 //  ChatSandbox
 //
-//  Created by Yu Kadowaki on 2018/12/14.
-//
 
 import Foundation
 

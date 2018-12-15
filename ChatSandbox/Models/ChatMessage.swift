@@ -27,6 +27,7 @@ struct ChatMessage: ModelProtocol {
         case system
     }
 
+
     // MARK: - Static properties
 
     static let collectionName: String = "chatMessages"
@@ -71,6 +72,20 @@ struct ChatMessage: ModelProtocol {
         self.isSent       = isSent
         self.sentAt       = sentAt
     }
+
+
+    // MARK: - Internal functions
+
+    func isDiff(chatMessage: ChatMessage) -> Bool {
+        return
+            self.id != chatMessage.id ||
+            self.userId != chatMessage.userId ||
+            self.userName != chatMessage.userName ||
+            self.typeRawValue != chatMessage.typeRawValue ||
+            self.message != chatMessage.message ||
+            self.isReadUserId != chatMessage.isReadUserId ||
+            self.isSent != chatMessage.isSent
+    }
 }
 
 extension ChatMessage {
@@ -84,5 +99,9 @@ extension ChatMessage {
         set {
             self.typeRawValue = newValue?.rawValue ?? ""
         }
+    }
+
+    var sentAtString: String? {
+        return self.sentAt?.dateValue().toString(with: .yearToDayOfWeekJapanese)
     }
 }

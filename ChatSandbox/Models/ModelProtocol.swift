@@ -27,7 +27,7 @@ extension ModelProtocol {
         }
     }
 
-    func toDictionary(isWithoutId: Bool = false) -> [String: Any]? {
+    func toDictionary(isWithoutId: Bool = true) -> [String: Any]? {
         do {
             var dictionary = try FirestoreEncoder().encode(self)
             if isWithoutId {

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatFooterView" customModule="ChatSandbox" customModuleProvider="target">
+            <connections>
+                <outlet property="messagePlaceholderLabel" destination="Cyt-Q1-woH" id="SbU-1q-cfy"/>
+                <outlet property="messageTextView" destination="Pf4-3E-tDW" id="3hI-wY-qhE"/>
+                <outlet property="sendButton" destination="z3Q-7H-3B7" id="qoV-fA-qGH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZE1-oc-EGU">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqb-KM-oYf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="W4X-Pv-A4a"/>
+                    </constraints>
+                </view>
+                <textView opaque="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-3E-tDW">
+                    <rect key="frame" x="8" y="8.5" width="315" height="39.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.29200305119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3Q-7H-3B7">
+                    <rect key="frame" x="323" y="10" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="VfR-ml-2Bk"/>
+                        <constraint firstAttribute="width" constant="44" id="qyA-I5-oFU"/>
+                    </constraints>
+                    <state key="normal" image="send-message"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type Message..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-Q1-woH">
+                    <rect key="frame" x="16" y="12.5" width="109.5" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="bnU-T3-ejo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dqb-KM-oYf" firstAttribute="leading" secondItem="BmW-TR-ubB" secondAttribute="leading" id="0LQ-SS-EVH"/>
+                <constraint firstItem="z3Q-7H-3B7" firstAttribute="centerY" secondItem="ZE1-oc-EGU" secondAttribute="centerY" id="NTm-tY-WRy"/>
+                <constraint firstItem="z3Q-7H-3B7" firstAttribute="leading" secondItem="Pf4-3E-tDW" secondAttribute="trailing" id="OVb-D1-spJ"/>
+                <constraint firstItem="Pf4-3E-tDW" firstAttribute="leading" secondItem="BmW-TR-ubB" secondAttribute="leading" constant="8" id="PdM-Li-IAd"/>
+                <constraint firstItem="Pf4-3E-tDW" firstAttribute="top" secondItem="dqb-KM-oYf" secondAttribute="bottom" constant="8" id="Se1-1T-Bzy"/>
+                <constraint firstItem="Cyt-Q1-woH" firstAttribute="leading" secondItem="BmW-TR-ubB" secondAttribute="leading" constant="16" id="ZvN-fm-I9q"/>
+                <constraint firstItem="BmW-TR-ubB" firstAttribute="trailing" secondItem="z3Q-7H-3B7" secondAttribute="trailing" constant="8" id="gHk-4h-R7k"/>
+                <constraint firstAttribute="bottom" secondItem="Pf4-3E-tDW" secondAttribute="bottom" constant="16" id="jlH-ra-sJ8"/>
+                <constraint firstItem="Cyt-Q1-woH" firstAttribute="top" secondItem="Pf4-3E-tDW" secondAttribute="top" constant="4" id="pAo-xu-vdi"/>
+                <constraint firstItem="dqb-KM-oYf" firstAttribute="trailing" secondItem="BmW-TR-ubB" secondAttribute="trailing" id="pot-fx-YYK"/>
+                <constraint firstItem="dqb-KM-oYf" firstAttribute="top" secondItem="ZE1-oc-EGU" secondAttribute="top" id="qi8-nN-qp3"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="BmW-TR-ubB"/>
+            <point key="canvasLocation" x="33.5" y="56"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="send-message" width="24" height="24"/>
+    </resources>
+</document>

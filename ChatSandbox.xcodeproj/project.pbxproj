@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D3D371C916EB4CBD707CD74 /* Pods_ChatSandbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83796DA191D376B526D28104 /* Pods_ChatSandbox.framework */; };
 		BF346BD721C3889D00F9CB65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BD621C3889D00F9CB65 /* AppDelegate.swift */; };
-		BF346BD921C3889D00F9CB65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BD821C3889D00F9CB65 /* ViewController.swift */; };
-		BF346BDC21C3889D00F9CB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF346BDA21C3889D00F9CB65 /* Main.storyboard */; };
+		BF346BD921C3889D00F9CB65 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BD821C3889D00F9CB65 /* ChatViewController.swift */; };
+		BF346BDC21C3889D00F9CB65 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF346BDA21C3889D00F9CB65 /* Chat.storyboard */; };
 		BF346BDE21C388A000F9CB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF346BDD21C388A000F9CB65 /* Assets.xcassets */; };
 		BF346BE121C388A000F9CB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF346BDF21C388A000F9CB65 /* LaunchScreen.storyboard */; };
 		BF346BEA21C393B500F9CB65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF346BE921C393B500F9CB65 /* GoogleService-Info.plist */; };
@@ -19,14 +19,30 @@
 		BF346BF821C3DEA100F9CB65 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BF521C3DEA100F9CB65 /* ChatMessage.swift */; };
 		BF346BFD21C3EAD800F9CB65 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BFC21C3EAD800F9CB65 /* Room.swift */; };
 		BF346BFF21C3EEC600F9CB65 /* ModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346BFE21C3EEC600F9CB65 /* ModelProtocol.swift */; };
+		BF346C0721C3FF0600F9CB65 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C0621C3FF0600F9CB65 /* AlertBuilder.swift */; };
+		BF346C0921C4008700F9CB65 /* ChatFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C0821C4008700F9CB65 /* ChatFooterView.swift */; };
+		BF346C0B21C4011F00F9CB65 /* ChatFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF346C0A21C4011F00F9CB65 /* ChatFooterView.xib */; };
+		BF346C0F21C404B700F9CB65 /* ChatTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C0E21C404B700F9CB65 /* ChatTitleView.swift */; };
+		BF346C1121C4052200F9CB65 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C1021C4052200F9CB65 /* UIImageView.swift */; };
+		BF346C1321C407FB00F9CB65 /* ChatTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF346C1221C407FB00F9CB65 /* ChatTitleView.xib */; };
+		BF346C1621C4090400F9CB65 /* ChatDateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C1521C4090400F9CB65 /* ChatDateHeaderView.swift */; };
+		BF346C1821C4092600F9CB65 /* ChatDateHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF346C1721C4092600F9CB65 /* ChatDateHeaderView.xib */; };
+		BF346C1B21C409B400F9CB65 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C1A21C409B400F9CB65 /* UIView.swift */; };
+		BF346C1D21C40A5300F9CB65 /* MyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C1C21C40A5300F9CB65 /* MyMessageTableViewCell.swift */; };
+		BF346C1F21C40AF600F9CB65 /* OtherUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C1E21C40AF600F9CB65 /* OtherUserMessageTableViewCell.swift */; };
+		BF346C2121C40B4100F9CB65 /* SystemMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C2021C40B4100F9CB65 /* SystemMessageTableViewCell.swift */; };
+		BF346C2421C40C8500F9CB65 /* MessageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C2321C40C8500F9CB65 /* MessageCellViewModel.swift */; };
+		BF346C2621C40E0900F9CB65 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C2521C40E0900F9CB65 /* ChatViewModel.swift */; };
+		BF346C2821C42B3100F9CB65 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C2721C42B3100F9CB65 /* String.swift */; };
+		BF346C2A21C42FBB00F9CB65 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF346C2921C42FBB00F9CB65 /* UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		83796DA191D376B526D28104 /* Pods_ChatSandbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatSandbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF346BD321C3889D00F9CB65 /* ChatSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF346BD621C3889D00F9CB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF346BD821C3889D00F9CB65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BF346BDB21C3889D00F9CB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF346BD821C3889D00F9CB65 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BF346BDB21C3889D00F9CB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
 		BF346BDD21C388A000F9CB65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF346BE021C388A000F9CB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF346BE221C388A000F9CB65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +53,22 @@
 		BF346BF521C3DEA100F9CB65 /* ChatMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		BF346BFC21C3EAD800F9CB65 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		BF346BFE21C3EEC600F9CB65 /* ModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocol.swift; sourceTree = "<group>"; };
+		BF346C0621C3FF0600F9CB65 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		BF346C0821C4008700F9CB65 /* ChatFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFooterView.swift; sourceTree = "<group>"; };
+		BF346C0A21C4011F00F9CB65 /* ChatFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatFooterView.xib; sourceTree = "<group>"; };
+		BF346C0E21C404B700F9CB65 /* ChatTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTitleView.swift; sourceTree = "<group>"; };
+		BF346C1021C4052200F9CB65 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		BF346C1221C407FB00F9CB65 /* ChatTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTitleView.xib; sourceTree = "<group>"; };
+		BF346C1521C4090400F9CB65 /* ChatDateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDateHeaderView.swift; sourceTree = "<group>"; };
+		BF346C1721C4092600F9CB65 /* ChatDateHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatDateHeaderView.xib; sourceTree = "<group>"; };
+		BF346C1A21C409B400F9CB65 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		BF346C1C21C40A5300F9CB65 /* MyMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageTableViewCell.swift; sourceTree = "<group>"; };
+		BF346C1E21C40AF600F9CB65 /* OtherUserMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserMessageTableViewCell.swift; sourceTree = "<group>"; };
+		BF346C2021C40B4100F9CB65 /* SystemMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemMessageTableViewCell.swift; sourceTree = "<group>"; };
+		BF346C2321C40C8500F9CB65 /* MessageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellViewModel.swift; sourceTree = "<group>"; };
+		BF346C2521C40E0900F9CB65 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		BF346C2721C42B3100F9CB65 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BF346C2921C42FBB00F9CB65 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		D3815ACFA231B769A34C682F /* Pods-ChatSandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSandbox.debug.xcconfig"; path = "Target Support Files/Pods-ChatSandbox/Pods-ChatSandbox.debug.xcconfig"; sourceTree = "<group>"; };
 		D9314749FD7BCC41842D99E8 /* Pods-ChatSandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatSandbox.release.xcconfig"; path = "Target Support Files/Pods-ChatSandbox/Pods-ChatSandbox.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,8 +118,11 @@
 				BF346BF921C3EA8B00F9CB65 /* Models */,
 				BF346BFB21C3EAB900F9CB65 /* Utils */,
 				BF346BD621C3889D00F9CB65 /* AppDelegate.swift */,
-				BF346BD821C3889D00F9CB65 /* ViewController.swift */,
-				BF346BDA21C3889D00F9CB65 /* Main.storyboard */,
+				BF346BD821C3889D00F9CB65 /* ChatViewController.swift */,
+				BF346BDA21C3889D00F9CB65 /* Chat.storyboard */,
+				BF346C2321C40C8500F9CB65 /* MessageCellViewModel.swift */,
+				BF346C2521C40E0900F9CB65 /* ChatViewModel.swift */,
+				BF346C0C21C4047700F9CB65 /* Views */,
 				BF346BDD21C388A000F9CB65 /* Assets.xcassets */,
 				BF346BDF21C388A000F9CB65 /* LaunchScreen.storyboard */,
 				BF346BE221C388A000F9CB65 /* Info.plist */,
@@ -111,6 +146,10 @@
 			isa = PBXGroup;
 			children = (
 				BF346BF321C3DEA000F9CB65 /* Date.swift */,
+				BF346C2721C42B3100F9CB65 /* String.swift */,
+				BF346C1021C4052200F9CB65 /* UIImageView.swift */,
+				BF346C2921C42FBB00F9CB65 /* UITableView.swift */,
+				BF346C1A21C409B400F9CB65 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,9 +157,58 @@
 		BF346BFB21C3EAB900F9CB65 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BF346C0621C3FF0600F9CB65 /* AlertBuilder.swift */,
 				BF346BF421C3DEA000F9CB65 /* FirestoreManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BF346C0C21C4047700F9CB65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF346C0D21C4048200F9CB65 /* ChatFooterView */,
+				BF346C1421C408E700F9CB65 /* ChatTItleView */,
+				BF346C1921C4097100F9CB65 /* ChatDateHeaderView */,
+				BF346C2221C40B6400F9CB65 /* MessageTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BF346C0D21C4048200F9CB65 /* ChatFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				BF346C0821C4008700F9CB65 /* ChatFooterView.swift */,
+				BF346C0A21C4011F00F9CB65 /* ChatFooterView.xib */,
+			);
+			path = ChatFooterView;
+			sourceTree = "<group>";
+		};
+		BF346C1421C408E700F9CB65 /* ChatTItleView */ = {
+			isa = PBXGroup;
+			children = (
+				BF346C0E21C404B700F9CB65 /* ChatTitleView.swift */,
+				BF346C1221C407FB00F9CB65 /* ChatTitleView.xib */,
+			);
+			path = ChatTItleView;
+			sourceTree = "<group>";
+		};
+		BF346C1921C4097100F9CB65 /* ChatDateHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				BF346C1521C4090400F9CB65 /* ChatDateHeaderView.swift */,
+				BF346C1721C4092600F9CB65 /* ChatDateHeaderView.xib */,
+			);
+			path = ChatDateHeaderView;
+			sourceTree = "<group>";
+		};
+		BF346C2221C40B6400F9CB65 /* MessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF346C1C21C40A5300F9CB65 /* MyMessageTableViewCell.swift */,
+				BF346C1E21C40AF600F9CB65 /* OtherUserMessageTableViewCell.swift */,
+				BF346C2021C40B4100F9CB65 /* SystemMessageTableViewCell.swift */,
+			);
+			path = MessageTableViewCell;
 			sourceTree = "<group>";
 		};
 		D191EF02703EAD949EA0869F /* Pods */ = {
@@ -195,8 +283,11 @@
 			files = (
 				BF346BE121C388A000F9CB65 /* LaunchScreen.storyboard in Resources */,
 				BF346BEA21C393B500F9CB65 /* GoogleService-Info.plist in Resources */,
+				BF346C0B21C4011F00F9CB65 /* ChatFooterView.xib in Resources */,
+				BF346C1821C4092600F9CB65 /* ChatDateHeaderView.xib in Resources */,
+				BF346C1321C407FB00F9CB65 /* ChatTitleView.xib in Resources */,
 				BF346BDE21C388A000F9CB65 /* Assets.xcassets in Resources */,
-				BF346BDC21C3889D00F9CB65 /* Main.storyboard in Resources */,
+				BF346BDC21C3889D00F9CB65 /* Chat.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +381,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF346BD921C3889D00F9CB65 /* ViewController.swift in Sources */,
+				BF346C2821C42B3100F9CB65 /* String.swift in Sources */,
+				BF346C2421C40C8500F9CB65 /* MessageCellViewModel.swift in Sources */,
+				BF346C2121C40B4100F9CB65 /* SystemMessageTableViewCell.swift in Sources */,
+				BF346C1B21C409B400F9CB65 /* UIView.swift in Sources */,
+				BF346BD921C3889D00F9CB65 /* ChatViewController.swift in Sources */,
+				BF346C1F21C40AF600F9CB65 /* OtherUserMessageTableViewCell.swift in Sources */,
+				BF346C1621C4090400F9CB65 /* ChatDateHeaderView.swift in Sources */,
 				BF346BF621C3DEA100F9CB65 /* Date.swift in Sources */,
 				BF346BFD21C3EAD800F9CB65 /* Room.swift in Sources */,
+				BF346C0921C4008700F9CB65 /* ChatFooterView.swift in Sources */,
 				BF346BD721C3889D00F9CB65 /* AppDelegate.swift in Sources */,
+				BF346C0F21C404B700F9CB65 /* ChatTitleView.swift in Sources */,
+				BF346C1121C4052200F9CB65 /* UIImageView.swift in Sources */,
+				BF346C1D21C40A5300F9CB65 /* MyMessageTableViewCell.swift in Sources */,
+				BF346C0721C3FF0600F9CB65 /* AlertBuilder.swift in Sources */,
 				BF346BF821C3DEA100F9CB65 /* ChatMessage.swift in Sources */,
 				BF346BFF21C3EEC600F9CB65 /* ModelProtocol.swift in Sources */,
+				BF346C2A21C42FBB00F9CB65 /* UITableView.swift in Sources */,
+				BF346C2621C40E0900F9CB65 /* ChatViewModel.swift in Sources */,
 				BF346BF721C3DEA100F9CB65 /* FirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,12 +407,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BF346BDA21C3889D00F9CB65 /* Main.storyboard */ = {
+		BF346BDA21C3889D00F9CB65 /* Chat.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BF346BDB21C3889D00F9CB65 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Chat.storyboard;
 			sourceTree = "<group>";
 		};
 		BF346BDF21C388A000F9CB65 /* LaunchScreen.storyboard */ = {
