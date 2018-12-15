@@ -31,7 +31,7 @@ internal final class ChatViewController: UIViewController {
 
     // MARK: - Private properties
 
-    private let roomId = "room1"
+    private var roomId = "room1"
 
     private var viewModel = ChatViewModel()
 

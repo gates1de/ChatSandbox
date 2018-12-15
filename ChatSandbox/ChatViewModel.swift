@@ -11,9 +11,9 @@ internal final class ChatViewModel {
 
     // MARK: - Internal properties
 
-    let myUserId = "user1"
+    let myUserId = "user2"
 
-    let myUserName = "山田太郎"
+    let myUserName = "鈴木一郎"
 
     var room: Room?
 
@@ -85,7 +85,7 @@ internal final class ChatViewModel {
 
             var newMessageCellViewModelList     : [MessageChatCellViewModel] = []
             var changedMessageCellViewModelList : [MessageChatCellViewModel] = []
-            var unreadPartnerMessageList        : [ChatMessage] = []
+            var unreadOtherUserMessageList      : [ChatMessage] = []
             var notSendMessageList              : [String: Bool?] = [:]
 
             // 新規メッセージの取得
@@ -97,7 +97,7 @@ internal final class ChatViewModel {
 
                 // まだ送信済みになっていないメッセージの場合
                 if newMessage.isSent == nil || newMessage.isSent != true {
-                    // キャッシュから取得したデータではない(リモートから取得した)と判断できる場合は, 送信済みとする(それ以外は送信失敗とみなす)
+                    // 書き込み待ち以外は送信済みとみなす
                     newMessage.isSent = !document.metadata.hasPendingWrites
                     notSendMessageList.updateValue(newMessage.isSent, forKey: messageId)
                 }
@@ -116,7 +116,7 @@ internal final class ChatViewModel {
                 // 相手からの未読メッセージを受信したら既読したことにする (下の resetUnreadCount で Firestore 更新)
                 if newMessage.userId != self.myUserId && !newMessage.isReadUserId.contains(self.myUserId) {
                     newMessage.isReadUserId.append(self.myUserId)
-                    unreadPartnerMessageList.append(newMessage)
+                    unreadOtherUserMessageList.append(newMessage)
                 }
 
                 // ローカルに保持している room も新しいデータとして更新(同期)する
@@ -130,7 +130,7 @@ internal final class ChatViewModel {
 
             // このブロックの中で未読メッセージがあった場合(つまりリアルタイムで新規メッセージを受け取った場合), 未読は常にリセットする
             if !snapshot.documents.isEmpty {
-                self.resetUnreadCount(targetMessageList: unreadPartnerMessageList)
+                self.resetUnreadCount(targetMessageList: unreadOtherUserMessageList)
             }
 
             // 更新されたデータがあるかどうかのフラグ
