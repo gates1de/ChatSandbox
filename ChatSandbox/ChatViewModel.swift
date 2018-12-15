@@ -94,16 +94,17 @@ internal final class ChatViewModel {
                 guard var newMessage = ChatMessage.initialize(id: messageId, json: document.data()) else {
                     continue
                 }
-                // 既に追加済みのメッセージはスルー
-                guard !self.allMessageList.contains(where: { $0.id == messageId }) else {
-                    continue
-                }
 
                 // まだ送信済みになっていないメッセージの場合
-                if newMessage.isSent != true {
-                    // キャッシュから取得したデータではない(リモートから取得した)場合は, 送信済みとする(それ以外は送信失敗とみなす)
+                if newMessage.isSent == nil || newMessage.isSent != true {
+                    // キャッシュから取得したデータではない(リモートから取得した)と判断できる場合は, 送信済みとする(それ以外は送信失敗とみなす)
                     newMessage.isSent = !document.metadata.hasPendingWrites
                     notSendMessageList.updateValue(newMessage.isSent, forKey: messageId)
+                }
+
+                // それ以外の既に追加済みのメッセージはスルー
+                guard !self.allMessageList.contains(where: { $0.id == messageId }) else {
+                    continue
                 }
 
                 // messageId が, 自分の userId が含まれたシステムメッセージなら無視(表示しないメッセージのため)
@@ -137,11 +138,11 @@ internal final class ChatViewModel {
             // 変更メッセージの取得
             for documentChange in snapshot.documentChanges {
                 let messageId = documentChange.document.documentID
-                let metadata  = documentChange.document.metadata
                 guard var changedMessage = ChatMessage.initialize(id: messageId, json: documentChange.document.data()),
                       let sentAtString = changedMessage.sentAtString else {
                     continue
                 }
+
                 guard var dateCellViewModelList = self.dailyCellViewModelList[sentAtString],
                     let index = dateCellViewModelList.index(where: { $0.chatMessage.id == messageId }) else {
                     continue
@@ -150,12 +151,6 @@ internal final class ChatViewModel {
                 let oldCellViewModel = dateCellViewModelList[index]
                 let oldMessage       = oldCellViewModel.chatMessage
 
-                // まだ送信済みになっていないメッセージの場合
-                if changedMessage.isSent == nil || changedMessage.isSent == false {
-                    // キャッシュから取得したデータではない(リモートから取得した)と判断できる場合は, 送信済みとする(それ以外は送信失敗とみなす)
-                    changedMessage.isSent = !metadata.hasPendingWrites || !metadata.isFromCache
-                    notSendMessageList.updateValue(changedMessage.isSent, forKey: messageId)
-                }
 
                 // 既に取得してあるメッセージと差分がある場合, 保持しておく
                 if oldMessage.isDiff(chatMessage: changedMessage) {
@@ -220,7 +215,6 @@ internal final class ChatViewModel {
         }
 
         let batch = FirestoreManager.shared.db.batch()
-
         batch.setData(messageData, forDocument: messageCollectionRef.document(chatMessage.id ?? ""))
         batch.updateData(
             roomData,
@@ -229,15 +223,23 @@ internal final class ChatViewModel {
                 .document(self.room?.id ?? "")
         )
 
-        batch.commit() { [weak self] error in
-            // メッセージの送信処理が完了したのでインジケータを非表示にする (送信結果はエラーの有無による)
-            self?.updateMessageSendResult(message: chatMessage, isSending: false, isSent: error == nil)
-        }
+        let semaphore = DispatchSemaphore(value: 0)
+        let queue = DispatchQueue(label: "sendMessage")
+        var errorResult: Error? = EmptyError()
 
-        // FIXME: タイムアウト処理
-        // オフライン時は batch.commit の completion が呼ばれないので, タイムアウトを待つしかない
-        // タイムアウトしたら isSending を false にしてインジケータを非表示にする
-//        self.updateMessageSendResult(message: chatMessage, isSending: false, isSent: false)
+        queue.async { [weak self] in
+            batch.commit() { error in
+                errorResult = error
+                semaphore.signal()
+            }
+
+            let result = semaphore.wait(timeout: .now() + 10)
+            self?.updateMessageSendResult(
+                message   : chatMessage,
+                isSending : false,
+                isSent    : errorResult == nil && result == .success
+            )
+        }
     }
 
     func insertMessageChatCellViewModel(targetCellViewModel: MessageChatCellViewModel) {
@@ -307,7 +309,7 @@ internal final class ChatViewModel {
         }
 
         batch.commit { error in
-            print(error)
+            if let error = error { print(error) }
         }
     }
 
@@ -404,7 +406,7 @@ internal final class ChatViewModel {
         }
 
         batch.commit() { error in
-            print(error)
+            if let error = error { print(error) }
         }
     }
 
